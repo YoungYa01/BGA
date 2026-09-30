@@ -7,6 +7,11 @@ import numpy as np
 
 PointDict = Dict[str, Any]
 
+# Recall-first safeguard for YOLO candidates whose local threshold contour only
+# captures a tiny inner texture/void instead of the complete solder ball.
+RAW_CIRCLE_RESCUE_MIN_CONF = 0.65
+RAW_CIRCLE_RESCUE_MAX_CONTOUR_RATIO = 0.36
+
 
 def imwrite_unicode(path: str, img: np.ndarray) -> None:
     ext = os.path.splitext(path)[1] or ".png"
@@ -267,6 +272,15 @@ def _analyze_point_roi(image_bgr: np.ndarray, point: PointDict, roi_pad: float =
     gray = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
     gray = cv2.GaussianBlur(gray, (5, 5), 0)
 
+    # YOLO 的检测框在召回优先场景下是一个很有价值的几何先验。
+    # 当焊球被走线、器件阴影或内部空洞切碎时，二值轮廓有时只会选中
+    # 焊球内部的一个小斑点，进而把真实半径从十几像素缩成 4~5 像素。
+    # 这里同时评估检测框对应的完整圆，供后面在“轮廓严重欠拟合”时回退。
+    raw_cx = float(point.get("CenterX", (left + right) / 2.0)) - float(l2)
+    raw_cy = float(point.get("CenterY", (top + bottom) / 2.0)) - float(t2)
+    raw_r = max(4.0, 0.5 * min(bw, bh))
+    raw_pol = classify_circular_polarity(gray, raw_cx, raw_cy, raw_r, radius_ref=radius_ref)
+
     th1 = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)[1]
     th2 = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY_INV, 31, 4)
     kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (3, 3))
@@ -277,12 +291,19 @@ def _analyze_point_roi(image_bgr: np.ndarray, point: PointDict, roi_pad: float =
     c2, f2 = choose_main_contour(th2, roi.shape[1], roi.shape[0], 0.02, 0.96)
     candidates = [x for x in [(c1, f1), (c2, f2)] if x[0] is not None]
     if not candidates:
+        raw_circle_fallback = bool(
+            radius_ref is not None
+            and float(point.get("Conf", 0.0)) >= RAW_CIRCLE_RESCUE_MIN_CONF
+            and raw_pol.get("label") == "solder"
+        )
         return {
             "raw_aspect": raw_aspect,
             "gray": gray,
             "feat": None,
-            "pol": {"label": "unknown"},
-            "est_r": float(point.get("Radius", max(1.0, min(bw, bh) / 2.0))),
+            "pol": raw_pol if raw_circle_fallback else {"label": "unknown"},
+            "est_r": raw_r,
+            "contour_est_r": 0.0,
+            "raw_circle_fallback": raw_circle_fallback,
         }
 
     feat = max(
@@ -296,14 +317,37 @@ def _analyze_point_roi(image_bgr: np.ndarray, point: PointDict, roi_pad: float =
     )
     cx, cy = feat["center_local"]
     _, _, bw0, bh0 = feat["bbox_local"]
-    est_r = max(4.0, 0.5 * min(bw0, bh0))
+    contour_est_r = max(4.0, 0.5 * min(bw0, bh0))
+    est_r = contour_est_r
     pol = classify_circular_polarity(gray, cx, cy, est_r, radius_ref=radius_ref)
+
+    # Recall-first fallback: only activate when the contour geometry is clearly
+    # broken, while the complete YOLO circle has strong solder polarity.
+    # This keeps normal contour refinement unchanged and prevents a tiny inner
+    # void/texture contour from hard-rejecting an otherwise valid solder ball.
+    contour_underfit = contour_est_r < RAW_CIRCLE_RESCUE_MAX_CONTOUR_RATIO * raw_r
+    # radius_ref=None is the earlier global-radius estimation pass. Applying the
+    # fallback there would let many raw boxes influence the array scale itself.
+    # Keep that pass contour-based; use this rescue only after a stable board-level
+    # radius reference has already been established.
+    raw_solder_evidence = (
+        radius_ref is not None
+        and float(point.get("Conf", 0.0)) >= RAW_CIRCLE_RESCUE_MIN_CONF
+        and raw_pol.get("label") == "solder"
+    )
+    raw_circle_fallback = bool(raw_solder_evidence and contour_underfit)
+    if raw_circle_fallback:
+        est_r = raw_r
+        pol = raw_pol
+
     return {
         "raw_aspect": raw_aspect,
         "gray": gray,
         "feat": feat,
         "pol": pol,
         "est_r": est_r,
+        "contour_est_r": contour_est_r,
+        "raw_circle_fallback": raw_circle_fallback,
     }
 
 
@@ -406,6 +450,8 @@ def rectangle_filter_roi(
         "Extent": round(float(feat["extent"]), 4),
         "RadialCV": round(float(feat["radial_cv"]), 4),
         "RadiusF": round(est_r, 4),
+        "ContourRadiusF": round(float(ana.get("contour_est_r", est_r)), 4),
+        "RawCircleFallback": bool(ana.get("raw_circle_fallback", False)),
         "RadiusRatio": round(radius_ratio, 4),
         "PolarLabel": polar_label,
     }
