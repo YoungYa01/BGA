@@ -11,13 +11,15 @@ def simulate_backend_batch_request():
     # ==========================================
     # 1. 配置输入输出路径
     # ==========================================
-    # 1. 获取当前脚本所在的目录 (例如 .../BGA_Void_Detection/src)
+    # 1. 获取当前脚本所在的目录 (例如 .../BGA/backend)
     SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+    # 项目根目录为脚本所在目录的上级 (data 现已放在项目根目录下)
+    PROJECT_DIR = os.path.dirname(SCRIPT_DIR)
 
-    DIR = 'new-img'
+    DIR = 'imgs'
 
     # 拼装精准的相对路径
-    input_dir = os.path.join(SCRIPT_DIR, 'data', DIR) 
+    input_dir = os.path.join(PROJECT_DIR, 'data', DIR) 
     
     # 如果不存在，就直接读取当前脚本所在的目录
     if not os.path.exists(input_dir):

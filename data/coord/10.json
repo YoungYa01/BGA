@@ -1,0 +1,3844 @@
+{
+  "version": "0.0.0",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "hole",
+      "points": [
+        [
+          645.7011494252872,
+          687.1724137931035
+        ],
+        [
+          647.5402298850574,
+          689.9310344827586
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          733.5172413793102,
+          651.0804597701149
+        ],
+        [
+          736.7356321839079,
+          655.9080459770115
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          763.6650596793385,
+          652.0902857002662
+        ],
+        [
+          763.8949447368099,
+          654.3891362749789
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          684.0,
+          737.125
+        ],
+        [
+          685.866323907455,
+          740.0334190231363
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          818.75,
+          643.875
+        ],
+        [
+          820.5,
+          647.125
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          773.5,
+          602.125
+        ],
+        [
+          774.75,
+          603.875
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          854.5,
+          597.375
+        ],
+        [
+          854.5,
+          598.875
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          853.75,
+          607.625
+        ],
+        [
+          854.75,
+          608.875
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          813.5,
+          602.125
+        ],
+        [
+          814.5,
+          603.375
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          725.0,
+          568.875
+        ],
+        [
+          726.0,
+          569.875
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          726.75,
+          602.875
+        ],
+        [
+          727.5,
+          603.875
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          641.75,
+          568.625
+        ],
+        [
+          642.5,
+          570.125
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          643.25,
+          526.875
+        ],
+        [
+          647.0,
+          530.125
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          734.25,
+          523.875
+        ],
+        [
+          737.75,
+          527.375
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          726.75,
+          484.875
+        ],
+        [
+          728.5,
+          488.125
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          644.25,
+          484.875
+        ],
+        [
+          647.0,
+          487.125
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          690.75,
+          478.125
+        ],
+        [
+          691.0,
+          480.625
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          605.75,
+          517.375
+        ],
+        [
+          608.0,
+          518.375
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          598.25,
+          474.875
+        ],
+        [
+          600.5,
+          475.375
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          606.0,
+          473.875
+        ],
+        [
+          607.75,
+          475.125
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          642.5,
+          443.125
+        ],
+        [
+          645.75,
+          447.375
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          733.25,
+          395.375
+        ],
+        [
+          735.75,
+          399.125
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          723.75,
+          395.375
+        ],
+        [
+          725.0,
+          396.375
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          772.5,
+          392.125
+        ],
+        [
+          773.0,
+          394.875
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          770.25,
+          439.375
+        ],
+        [
+          771.5,
+          440.625
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          687.0,
+          439.125
+        ],
+        [
+          688.25,
+          440.375
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          678.5,
+          478.875
+        ],
+        [
+          680.0,
+          480.125
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          593.75,
+          392.125
+        ],
+        [
+          595.0,
+          393.875
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          646.75,
+          386.875
+        ],
+        [
+          649.75,
+          388.125
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          685.75,
+          345.375
+        ],
+        [
+          686.5,
+          346.625
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          688.75,
+          350.875
+        ],
+        [
+          690.0,
+          351.625
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          639.0,
+          269.625
+        ],
+        [
+          640.0,
+          271.125
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          766.25,
+          311.875
+        ],
+        [
+          767.25,
+          312.875
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          899.2757201646092,
+          393.31687242798347
+        ],
+        [
+          899.8930041152263,
+          394.55144032921805
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          891.4567901234568,
+          392.6995884773662
+        ],
+        [
+          892.485596707819,
+          393.5226337448559
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          936.7697160883281,
+          390.67507886435334
+        ],
+        [
+          938.0315457413249,
+          391.9369085173502
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          935.699115044248,
+          433.858407079646
+        ],
+        [
+          936.5840707964603,
+          434.92035398230087
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          943.1327433628319,
+          434.92035398230087
+        ],
+        [
+          944.0176991150443,
+          435.98230088495575
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          935.699115044248,
+          475.9823008849557
+        ],
+        [
+          936.5840707964603,
+          477.3982300884956
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          934.9911504424781,
+          560.5840707964602
+        ],
+        [
+          936.0530973451328,
+          560.9380530973451
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          893.4601226993865,
+          473.00204498977513
+        ],
+        [
+          894.278118609407,
+          473.8200408997955
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          893.8691206543967,
+          479.9550102249489
+        ],
+        [
+          894.8916155419223,
+          480.9775051124745
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          895.9141104294479,
+          438.5950920245399
+        ],
+        [
+          896.95,
+          439.54999999999995
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          860.2664624808575,
+          400.1470137825421
+        ],
+        [
+          860.7258805513017,
+          401.6784073506891
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          852.6094946401225,
+          390.95865237366
+        ],
+        [
+          853.375191424196,
+          391.8774885145482
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          850.3124042879019,
+          396.01225114854515
+        ],
+        [
+          850.7718223583461,
+          397.0842266462481
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          901.3078101071975,
+          598.0030627871362
+        ],
+        [
+          904.9831546707504,
+          599.9938744257273
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          940.1739130434784,
+          694.4844720496894
+        ],
+        [
+          941.2919254658385,
+          695.9751552795032
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          934.335403726708,
+          727.6521739130435
+        ],
+        [
+          935.7018633540373,
+          728.5217391304348
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          851.8765008576331,
+          522.7375643224699
+        ],
+        [
+          851.8765008576331,
+          523.5951972555746
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          599.5420560747663,
+          561.8481308411215
+        ],
+        [
+          600.0093457943925,
+          563.1331775700935
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          596.7162162162161,
+          644.5844594594595
+        ],
+        [
+          597.5608108108107,
+          645.9358108108108
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          651.547557840617,
+          731.5501285347043
+        ],
+        [
+          652.0616966580976,
+          732.064267352185
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          689.5938303341902,
+          733.478149100257
+        ],
+        [
+          689.7223650385604,
+          734.1208226221079
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          690.0238095238095,
+          516.7222222222223
+        ],
+        [
+          691.6111111111112,
+          519.1031746031747
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          45.22672064777328,
+          378.255060728745
+        ],
+        [
+          46.238866396761125,
+          379.672064777328
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          90.16599190283401,
+          419.95546558704456
+        ],
+        [
+          91.17813765182186,
+          421.57489878542515
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          55.550607287449395,
+          461.6558704453442
+        ],
+        [
+          56.36032388663969,
+          462.87044534412956
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          89.15384615384616,
+          496.6761133603239
+        ],
+        [
+          90.16599190283401,
+          497.89068825910937
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          90.16599190283401,
+          488.7813765182187
+        ],
+        [
+          90.9757085020243,
+          489.99595141700405
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          89.35627530364371,
+          552.3441295546559
+        ],
+        [
+          90.16599190283401,
+          553.3562753036438
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          96.84615384615384,
+          588.3765182186235
+        ],
+        [
+          98.06072874493927,
+          589.1862348178138
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          37.129554655870436,
+          667.3238866396762
+        ],
+        [
+          38.344129554655865,
+          668.5384615384617
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          91.17813765182186,
+          699.9149797570851
+        ],
+        [
+          92.59514170040487,
+          702.1417004048583
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          97.85829959514169,
+          663.4777327935224
+        ],
+        [
+          97.85829959514169,
+          664.6923076923076
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          36.7246963562753,
+          711.251012145749
+        ],
+        [
+          39.35627530364374,
+          713.0728744939272
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          43.20242914979758,
+          800.7246963562752
+        ],
+        [
+          45.83400809716599,
+          803.9635627530365
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          41.58299595141702,
+          786.7570850202428
+        ],
+        [
+          41.98785425101215,
+          788.1740890688259
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          38.14170040485831,
+          792.6275303643724
+        ],
+        [
+          39.35627530364374,
+          794.0445344129555
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          81.66396761133603,
+          795.8663967611335
+        ],
+        [
+          82.87854251012146,
+          797.6882591093117
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          97.85829959514169,
+          790.6032388663969
+        ],
+        [
+          98.66801619433198,
+          791.8178137651821
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "hole",
+      "points": [
+        [
+          36.92712550607288,
+          838.3765182186235
+        ],
+        [
+          37.73684210526315,
+          839.7935222672065
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          47.39866369710472,
+          372.4231625835189
+        ],
+        [
+          56.530066815144835,
+          383.5590200445434
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          90.16035634743878,
+          372.6458797327394
+        ],
+        [
+          99.29175946547889,
+          383.7817371937639
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          47.62138084632522,
+          414.739420935412
+        ],
+        [
+          56.752783964365335,
+          425.8752783964365
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          90.38307349665928,
+          414.9621380846325
+        ],
+        [
+          99.51447661469939,
+          426.097995545657
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          47.17594654788422,
+          456.61024498886417
+        ],
+        [
+          56.307349665924335,
+          467.74610244988867
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          89.93763919821828,
+          456.83296213808467
+        ],
+        [
+          99.06904231625839,
+          467.96881959910917
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          47.17594654788422,
+          499.1492204899777
+        ],
+        [
+          56.307349665924335,
+          510.2850779510022
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          89.93763919821828,
+          499.3719376391982
+        ],
+        [
+          99.06904231625839,
+          510.5077951002227
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          47.17594654788422,
+          541.4654788418709
+        ],
+        [
+          56.307349665924335,
+          552.6013363028953
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          89.93763919821828,
+          541.6881959910913
+        ],
+        [
+          99.06904231625839,
+          552.824053452116
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          46.28507795100225,
+          583.336302895323
+        ],
+        [
+          55.41648106904236,
+          594.4721603563474
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          89.0467706013363,
+          583.5590200445434
+        ],
+        [
+          98.17817371937642,
+          594.6948775055681
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          46.50779510022275,
+          625.6525612472161
+        ],
+        [
+          55.63919821826286,
+          636.7884187082406
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          89.2694877505568,
+          625.8752783964366
+        ],
+        [
+          98.40089086859692,
+          637.0111358574612
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          46.28507795100225,
+          667.0779510022273
+        ],
+        [
+          55.41648106904236,
+          678.2138084632518
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          89.0467706013363,
+          667.3006681514478
+        ],
+        [
+          98.17817371937642,
+          678.4365256124725
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          46.28507795100225,
+          710.2850779510023
+        ],
+        [
+          55.41648106904236,
+          721.4209354120268
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          89.0467706013363,
+          710.5077951002228
+        ],
+        [
+          98.17817371937642,
+          721.6436525612474
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          45.83964365256125,
+          751.9331848552339
+        ],
+        [
+          54.97104677060136,
+          763.0690423162583
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          88.6013363028953,
+          752.1559020044543
+        ],
+        [
+          97.73273942093542,
+          763.291759465479
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          46.06236080178175,
+          794.9175946547884
+        ],
+        [
+          55.19376391982186,
+          806.0534521158129
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          88.8240534521158,
+          795.1403118040089
+        ],
+        [
+          97.95545657015592,
+          806.2761692650336
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          45.394209354120306,
+          836.5657015590201
+        ],
+        [
+          54.52561247216042,
+          847.7015590200446
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          88.15590200445436,
+          836.7884187082406
+        ],
+        [
+          97.28730512249447,
+          847.9242761692652
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          600.8507795100222,
+          732.7795100222717
+        ],
+        [
+          611.0957683741648,
+          741.9109131403118
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          643.3897550111358,
+          732.5567928730512
+        ],
+        [
+          653.6347438752783,
+          741.6881959910913
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          685.7060133630289,
+          733.0022271714921
+        ],
+        [
+          695.9510022271714,
+          742.1336302895322
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          728.2449888641424,
+          733.0022271714921
+        ],
+        [
+          738.489977728285,
+          742.1336302895322
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          770.5612472160356,
+          733.2249443207127
+        ],
+        [
+          780.8062360801781,
+          742.3563474387528
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          812.4320712694877,
+          733.6703786191537
+        ],
+        [
+          822.6770601336302,
+          742.8017817371938
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          854.7483296213807,
+          734.1158129175946
+        ],
+        [
+          864.9933184855232,
+          743.2472160356347
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          897.5100222717148,
+          733.6703786191537
+        ],
+        [
+          907.7550111358573,
+          742.8017817371938
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          939.6035634743874,
+          734.1158129175947
+        ],
+        [
+          949.84855233853,
+          743.2472160356348
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          601.2962138084632,
+          690.2405345211581
+        ],
+        [
+          611.5412026726058,
+          699.3719376391982
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          643.8351893095768,
+          690.0178173719377
+        ],
+        [
+          654.0801781737193,
+          699.1492204899778
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          686.1514476614699,
+          690.4632516703786
+        ],
+        [
+          696.3964365256124,
+          699.5946547884187
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          728.6904231625834,
+          690.4632516703786
+        ],
+        [
+          738.935412026726,
+          699.5946547884187
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          771.0066815144766,
+          690.6859688195991
+        ],
+        [
+          781.2516703786191,
+          699.8173719376392
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          812.8775055679287,
+          691.1314031180401
+        ],
+        [
+          823.1224944320712,
+          700.2628062360802
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          601.2962138084632,
+          647.7015590200446
+        ],
+        [
+          611.5412026726058,
+          656.8329621380847
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          643.8351893095768,
+          647.4788418708241
+        ],
+        [
+          654.0801781737193,
+          656.6102449888642
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          685.9287305122493,
+          647.924276169265
+        ],
+        [
+          696.1737193763919,
+          657.0556792873051
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          728.6904231625834,
+          648.1469933184854
+        ],
+        [
+          739.6035634743876,
+          657.2783964365256
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          770.3385300668151,
+          648.5924276169264
+        ],
+        [
+          780.5835189309577,
+          657.7238307349666
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          812.8775055679287,
+          648.5924276169266
+        ],
+        [
+          823.1224944320712,
+          657.7238307349667
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          601.2962138084632,
+          605.3853006681516
+        ],
+        [
+          611.5412026726058,
+          614.5167037861917
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          643.1670378619153,
+          605.1625835189311
+        ],
+        [
+          653.4120267260579,
+          614.2939866369712
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          686.3741648106903,
+          606.0534521158129
+        ],
+        [
+          696.6191536748329,
+          615.184855233853
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          728.6904231625834,
+          605.608017817372
+        ],
+        [
+          738.935412026726,
+          614.7394209354121
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          770.783964365256,
+          605.608017817372
+        ],
+        [
+          781.0289532293986,
+          614.7394209354121
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          812.8775055679287,
+          606.2761692650336
+        ],
+        [
+          823.1224944320712,
+          615.4075723830737
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          601.2962138084632,
+          563.0690423162584
+        ],
+        [
+          611.5412026726058,
+          572.2004454342986
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          643.8351893095768,
+          562.846325167038
+        ],
+        [
+          654.0801781737193,
+          571.9777282850781
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          686.1514476614699,
+          563.2917594654789
+        ],
+        [
+          696.3964365256124,
+          572.423162583519
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          728.6904231625834,
+          563.2917594654789
+        ],
+        [
+          738.935412026726,
+          572.423162583519
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          770.3385300668151,
+          563.7371937639199
+        ],
+        [
+          780.5835189309577,
+          572.86859688196
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          812.8775055679287,
+          563.9599109131404
+        ],
+        [
+          823.1224944320712,
+          573.0913140311806
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          601.7416481069042,
+          520.5300668151449
+        ],
+        [
+          611.9866369710468,
+          529.661469933185
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          644.0579064587972,
+          520.530066815145
+        ],
+        [
+          654.3028953229398,
+          530.1069042316259
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          686.5968819599109,
+          520.7527839643653
+        ],
+        [
+          696.8418708240534,
+          529.8841870824054
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          728.4677060133629,
+          520.0846325167039
+        ],
+        [
+          739.3808463251669,
+          528.9933184855234
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          770.783964365256,
+          521.1982182628064
+        ],
+        [
+          781.0289532293986,
+          530.3296213808466
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          813.3229398663697,
+          521.4209354120269
+        ],
+        [
+          823.5679287305122,
+          530.552338530067
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          601.5189309576838,
+          478.65924276169267
+        ],
+        [
+          611.7639198218263,
+          487.7906458797329
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          644.2806236080178,
+          478.8819599109131
+        ],
+        [
+          654.5256124721603,
+          488.01336302895334
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          686.3741648106904,
+          478.8819599109131
+        ],
+        [
+          696.619153674833,
+          488.01336302895334
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          728.913140311804,
+          478.8819599109131
+        ],
+        [
+          739.1581291759466,
+          488.01336302895334
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          771.0066815144767,
+          478.88195991091334
+        ],
+        [
+          781.2516703786192,
+          488.01336302895334
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          813.1002227171492,
+          479.55011135857467
+        ],
+        [
+          823.3452115812918,
+          488.6815144766149
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          601.9643652561248,
+          436.12026726057906
+        ],
+        [
+          612.2093541202673,
+          445.2516703786193
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          644.5033407572383,
+          436.3429844097996
+        ],
+        [
+          655.4164810690423,
+          445.4743875278396
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          686.8195991091314,
+          436.3429844097995
+        ],
+        [
+          697.064587973274,
+          445.4743875278397
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          729.358574610245,
+          436.3429844097995
+        ],
+        [
+          739.6035634743876,
+          445.4743875278397
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          770.5612472160357,
+          436.78841870824067
+        ],
+        [
+          780.8062360801782,
+          445.91982182628067
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          813.5456570155902,
+          437.01113585746106
+        ],
+        [
+          823.7906458797328,
+          446.1425389755013
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          601.9643652561248,
+          393.5812917594655
+        ],
+        [
+          612.2093541202673,
+          402.7126948775057
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          644.5033407572383,
+          393.35857461024506
+        ],
+        [
+          654.7483296213809,
+          402.4899777282853
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          686.8195991091314,
+          393.80400890868594
+        ],
+        [
+          697.064587973274,
+          402.93541202672617
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          729.358574610245,
+          393.80400890868594
+        ],
+        [
+          739.6035634743876,
+          402.93541202672617
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          771.2293986636972,
+          394.69487750556806
+        ],
+        [
+          781.4743875278398,
+          403.82628062360806
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          813.5456570155902,
+          394.4721603563475
+        ],
+        [
+          823.7906458797328,
+          403.6035634743877
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          601.9643652561248,
+          351.7104677060134
+        ],
+        [
+          612.2093541202673,
+          360.8418708240536
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          644.5033407572383,
+          351.48775055679295
+        ],
+        [
+          654.7483296213809,
+          360.61915367483317
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          686.8195991091314,
+          351.93318485523383
+        ],
+        [
+          697.064587973274,
+          361.06458797327406
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          729.358574610245,
+          351.93318485523383
+        ],
+        [
+          739.6035634743876,
+          361.06458797327406
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          771.6748329621381,
+          352.1559020044545
+        ],
+        [
+          781.9198218262807,
+          361.2873051224945
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          813.5456570155902,
+          352.6013363028954
+        ],
+        [
+          823.7906458797328,
+          361.7327394209356
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          602.1870824053452,
+          308.94877505567933
+        ],
+        [
+          612.4320712694878,
+          318.08017817371956
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          644.0579064587973,
+          309.39420935412033
+        ],
+        [
+          654.3028953229399,
+          318.52561247216056
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          687.4877505567929,
+          308.9487750556793
+        ],
+        [
+          697.7327394209354,
+          318.0801781737195
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          729.5812917594654,
+          309.1714922048998
+        ],
+        [
+          739.826280623608,
+          318.30289532294
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          771.4521158129177,
+          309.8396436525614
+        ],
+        [
+          781.6971046770602,
+          318.9710467706014
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          813.7683741648107,
+          309.83964365256134
+        ],
+        [
+          824.0133630289532,
+          318.97104677060156
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          602.4097995545657,
+          266.6325167037862
+        ],
+        [
+          612.6547884187082,
+          275.76391982182645
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          644.9487750556792,
+          266.4097995545658
+        ],
+        [
+          655.1937639198218,
+          275.541202672606
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          687.2650334075723,
+          266.85523385300667
+        ],
+        [
+          697.5100222717149,
+          275.9866369710469
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          729.5812917594653,
+          266.85523385300667
+        ],
+        [
+          739.8262806236079,
+          275.9866369710469
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          772.120267260579,
+          267.74610244988884
+        ],
+        [
+          782.3652561247216,
+          276.87750556792884
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          813.9910913140311,
+          267.5233853006682
+        ],
+        [
+          824.2360801781737,
+          276.65478841870845
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          602.6325167037861,
+          224.5389755011136
+        ],
+        [
+          612.8775055679287,
+          233.67037861915384
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          645.1714922048997,
+          224.31625835189317
+        ],
+        [
+          655.4164810690422,
+          233.4476614699334
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          687.4877505567928,
+          224.76169265033406
+        ],
+        [
+          697.7327394209353,
+          233.89309576837428
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          730.0267260579063,
+          224.76169265033406
+        ],
+        [
+          740.2717149220489,
+          233.89309576837428
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          772.120267260579,
+          224.76169265033423
+        ],
+        [
+          782.3652561247216,
+          233.89309576837422
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          814.2138084632516,
+          225.4298440979956
+        ],
+        [
+          824.4587973273941,
+          234.56124721603584
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          854.3401663560745,
+          691.2586700604517
+        ],
+        [
+          864.5851552202171,
+          700.3900731784918
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          897.1018590064086,
+          690.8132357620108
+        ],
+        [
+          907.3468478705512,
+          699.9446388800509
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          939.1954002090813,
+          691.2586700604518
+        ],
+        [
+          949.4403890732239,
+          700.3900731784919
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          854.5442479887275,
+          648.8096904686149
+        ],
+        [
+          864.7892368528701,
+          657.941093586655
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          897.3059406390616,
+          648.364256170174
+        ],
+        [
+          907.5509295032042,
+          657.4956592882141
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          939.3994818417343,
+          648.809690468615
+        ],
+        [
+          949.6444707058769,
+          657.9410935866551
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          855.1564928866867,
+          606.7688741420843
+        ],
+        [
+          865.4014817508292,
+          615.9002772601244
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          897.9181855370208,
+          606.3234398436434
+        ],
+        [
+          908.1631744011634,
+          615.4548429616835
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          940.0117267396935,
+          606.7688741420844
+        ],
+        [
+          950.256715603836,
+          615.9002772601245
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          855.36057451934,
+          563.7076496522883
+        ],
+        [
+          865.6055633834826,
+          572.8390527703284
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          897.3059406390619,
+          564.690786782419
+        ],
+        [
+          907.5509295032044,
+          573.8221899004591
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          940.2158083723467,
+          564.5239761829008
+        ],
+        [
+          950.4607972364893,
+          573.6553793009409
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          854.9524112540339,
+          521.2586700604515
+        ],
+        [
+          865.1974001181765,
+          530.3900731784917
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          898.122267169674,
+          521.0173173946639
+        ],
+        [
+          908.3672560338166,
+          530.148720512704
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          939.8076451070406,
+          522.0749965910641
+        ],
+        [
+          950.0526339711831,
+          531.2063997091042
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          855.36057451934,
+          479.6260169992271
+        ],
+        [
+          865.6055633834826,
+          488.7574201172672
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          897.7141039043679,
+          479.18058270078643
+        ],
+        [
+          907.9590927685105,
+          488.31198581882654
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          940.2158083723467,
+          480.4423435298396
+        ],
+        [
+          950.4607972364893,
+          489.5737466478797
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          855.7687377846462,
+          436.5647925094312
+        ],
+        [
+          866.0137266487887,
+          445.6961956274713
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          897.714103904368,
+          436.9356847416028
+        ],
+        [
+          907.9590927685106,
+          446.0670878596429
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          940.2158083723466,
+          437.3811190400437
+        ],
+        [
+          950.4607972364892,
+          446.5125221580838
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          855.5646561519932,
+          395.1362210808598
+        ],
+        [
+          865.8096450161357,
+          404.2676241988999
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          897.918185537021,
+          394.6907867824192
+        ],
+        [
+          908.1631744011636,
+          403.8221899004593
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          940.6239716376529,
+          395.34030271351315
+        ],
+        [
+          950.8689605017954,
+          404.47170583155327
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          855.5646561519932,
+          352.8913231216761
+        ],
+        [
+          865.8096450161357,
+          362.02272623971623
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          897.918185537021,
+          352.4458888232355
+        ],
+        [
+          908.1631744011636,
+          361.57729194127563
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          940.6239716376529,
+          353.0954047543295
+        ],
+        [
+          950.8689605017954,
+          362.2268078723696
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          855.9728194172993,
+          310.23826189718636
+        ],
+        [
+          866.2178082814419,
+          319.3696650152265
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          898.3263488023272,
+          309.79282759874576
+        ],
+        [
+          908.5713376664697,
+          318.92423071678587
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          941.032134902959,
+          310.4423435298397
+        ],
+        [
+          951.2771237671016,
+          319.57374664787983
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          855.9728194172993,
+          267.5852006726966
+        ],
+        [
+          866.2178082814419,
+          276.7166037907367
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          898.5304304349802,
+          267.54792963956214
+        ],
+        [
+          908.7754192991227,
+          276.67933275760225
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          940.828053270306,
+          267.993363938003
+        ],
+        [
+          951.0730421344485,
+          277.1247670560431
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          856.1769010499523,
+          225.74846597881907
+        ],
+        [
+          866.4218899140949,
+          234.87986909685918
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          898.7345120676332,
+          225.7111949456846
+        ],
+        [
+          908.9795009317758,
+          234.84259806372472
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "solder ball",
+      "points": [
+        [
+          941.440298168265,
+          225.7484659788193
+        ],
+        [
+          951.6852870324076,
+          234.8798690968594
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "circle",
+      "flags": {},
+      "mask": null
+    }
+  ],
+  "imagePath": "10.jpg",
+  "imageData": null,
+  "imageHeight": 864,
+  "imageWidth": 1536
+}
