@@ -1,0 +1,546 @@
+import math
+import os
+
+import cv2
+import numpy as np
+
+
+def imwrite_unicode(path: str, img: np.ndarray) -> None:
+    ext = os.path.splitext(path)[1] or ".png"
+    ok, buf = cv2.imencode(ext, img)
+    if not ok:
+        raise RuntimeError(f"Failed to encode image for saving: {path}")
+    buf.tofile(path)
+
+
+def clamp_box(left: int, top: int, right: int, bottom: int, w: int, h: int):
+    left = max(0, min(left, w - 1))
+    top = max(0, min(top, h - 1))
+    right = max(left + 1, min(right, w))
+    bottom = max(top + 1, min(bottom, h))
+    return left, top, right, bottom
+
+
+def point_dist(a, b):
+    return math.hypot(a["CenterX"] - b["CenterX"], a["CenterY"] - b["CenterY"])
+
+
+def contour_features(cnt):
+    area = float(cv2.contourArea(cnt))
+    peri = float(cv2.arcLength(cnt, True))
+    circ = float(4.0 * np.pi * area / (peri * peri + 1e-6))
+    x, y, w, h = cv2.boundingRect(cnt)
+    aspect = float(max(w, h) / (min(w, h) + 1e-6))
+    extent = float(area / (w * h + 1e-6))
+
+    M = cv2.moments(cnt)
+    if abs(M["m00"]) < 1e-6:
+        cx = x + w / 2.0
+        cy = y + h / 2.0
+    else:
+        cx = M["m10"] / M["m00"]
+        cy = M["m01"] / M["m00"]
+
+    pts = cnt[:, 0, :].astype(np.float32)
+    rr = np.sqrt((pts[:, 0] - cx) ** 2 + (pts[:, 1] - cy) ** 2)
+    radial_cv = float(np.std(rr) / (np.mean(rr) + 1e-6))
+
+    return {
+        "area": area,
+        "circularity": circ,
+        "aspect": aspect,
+        "extent": extent,
+        "radial_cv": radial_cv,
+        "center_local": (float(cx), float(cy)),
+        "bbox_local": (int(x), int(y), int(w), int(h)),
+    }
+
+
+def choose_main_contour(binary, roi_w, roi_h, min_area_ratio=0.02, max_area_ratio=0.96):
+    cnts, _ = cv2.findContours(binary, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    if not cnts:
+        return None, None
+
+    cx0 = roi_w / 2.0
+    cy0 = roi_h / 2.0
+    roi_area = float(roi_w * roi_h)
+    diag = max(1.0, float(np.hypot(roi_w, roi_h)))
+
+    best = None
+    best_feat = None
+    best_score = -1e9
+    for cnt in cnts:
+        feat = contour_features(cnt)
+        if feat["area"] < roi_area * min_area_ratio or feat["area"] > roi_area * max_area_ratio:
+            continue
+        cx, cy = feat["center_local"]
+        center_penalty = float(np.hypot(cx - cx0, cy - cy0) / diag)
+        score = (
+            2.2 * feat["circularity"]
+            - 1.5 * abs(feat["extent"] - 0.78)
+            - 1.5 * feat["radial_cv"]
+            - 0.8 * center_penalty
+            - 0.5 * max(0.0, feat["aspect"] - 1.0)
+        )
+        if score > best_score:
+            best_score = score
+            best = cnt
+            best_feat = feat
+    return best, best_feat
+
+
+def radial_intensity_profile(gray: np.ndarray, cx: float, cy: float, r: float):
+    yy, xx = np.indices(gray.shape)
+    dist = np.sqrt((xx - cx) ** 2 + (yy - cy) ** 2)
+
+    core = gray[dist <= 0.38 * r]
+    ring = gray[(dist > 0.55 * r) & (dist <= 0.95 * r)]
+    outer = gray[(dist > 1.10 * r) & (dist <= 1.55 * r)]
+
+    if core.size < 10 or ring.size < 10 or outer.size < 10:
+        return None
+
+    core_m = float(np.mean(core))
+    ring_m = float(np.mean(ring))
+    outer_m = float(np.mean(outer))
+
+    return {
+        "core_mean": core_m,
+        "ring_mean": ring_m,
+        "outer_mean": outer_m,
+        "core_minus_ring": core_m - ring_m,
+        "outer_minus_ring": outer_m - ring_m,
+        "ring_minus_core": ring_m - core_m,
+        "outer_minus_core": outer_m - core_m,
+    }
+
+
+def classify_circular_polarity(
+    gray: np.ndarray,
+    cx: float,
+    cy: float,
+    r: float,
+    via_core_ring_margin: float = 10.0,
+    via_outer_ring_margin: float = 6.0,
+    solder_ring_core_margin: float = 8.0,
+    solder_outer_core_margin: float = 4.0,
+):
+    sig = radial_intensity_profile(gray, cx, cy, r)
+    if sig is None:
+        return {"label": "unknown"}
+
+    core_m = sig["core_mean"]
+    ring_m = sig["ring_mean"]
+    outer_m = sig["outer_mean"]
+
+    via_like = (
+        (core_m - ring_m) >= via_core_ring_margin and
+        (outer_m - ring_m) >= via_outer_ring_margin
+    )
+
+    solder_like = (
+        (ring_m - core_m) >= solder_ring_core_margin and
+        (outer_m - core_m) >= solder_outer_core_margin
+    )
+
+    if via_like and not solder_like:
+        label = "via"
+    elif solder_like and not via_like:
+        label = "solder"
+    else:
+        label = "unknown"
+
+    out = {
+        "label": label,
+        "CoreMean": round(core_m, 3),
+        "RingMean": round(ring_m, 3),
+        "OuterMean": round(outer_m, 3),
+        "CoreMinusRing": round(core_m - ring_m, 3),
+        "OuterMinusRing": round(outer_m - ring_m, 3),
+        "RingMinusCore": round(ring_m - core_m, 3),
+        "OuterMinusCore": round(outer_m - core_m, 3),
+    }
+    return out
+
+
+def rectangle_filter_roi(
+    image_bgr: np.ndarray,
+    point: dict,
+    roi_pad: float = 0.16,
+    max_box_aspect: float = 1.85,
+    min_circularity: float = 0.42,
+    max_extent: float = 0.90,
+    max_radial_cv: float = 0.32,
+    min_area_ratio: float = 0.02,
+    max_area_ratio: float = 0.96,
+):
+    H, W = image_bgr.shape[:2]
+    left, top, right, bottom = point["Left"], point["Top"], point["Right"], point["Bottom"]
+    bw, bh = right - left, bottom - top
+    raw_aspect = max(bw, bh) / (min(bw, bh) + 1e-6)
+
+    if raw_aspect > max_box_aspect:
+        meta = {
+            "RejectReason": "bbox_aspect",
+            "BoxAspect": round(float(raw_aspect), 4),
+            "FilterPassed": False,
+        }
+        return False, meta
+
+    pad_x = int(round(bw * roi_pad))
+    pad_y = int(round(bh * roi_pad))
+    l2, t2, r2, b2 = clamp_box(left - pad_x, top - pad_y, right + pad_x, bottom + pad_y, W, H)
+    roi = image_bgr[t2:b2, l2:r2]
+    if roi.size == 0:
+        return True, {"FilterPassed": True, "RejectReason": ""}
+
+    gray = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
+    gray = cv2.GaussianBlur(gray, (5, 5), 0)
+
+    th1 = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)[1]
+    th2 = cv2.adaptiveThreshold(
+        gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY_INV, 31, 4
+    )
+
+    kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (3, 3))
+    th1 = cv2.morphologyEx(th1, cv2.MORPH_OPEN, kernel, iterations=1)
+    th2 = cv2.morphologyEx(th2, cv2.MORPH_OPEN, kernel, iterations=1)
+
+    c1, f1 = choose_main_contour(th1, roi.shape[1], roi.shape[0], min_area_ratio, max_area_ratio)
+    c2, f2 = choose_main_contour(th2, roi.shape[1], roi.shape[0], min_area_ratio, max_area_ratio)
+
+    candidates = [x for x in [(c1, f1), (c2, f2)] if x[0] is not None]
+    if not candidates:
+        return True, {"FilterPassed": True, "RejectReason": ""}
+
+    feat = max(
+        [f for _, f in candidates],
+        key=lambda z: (
+            2.2 * z["circularity"]
+            - 1.5 * abs(z["extent"] - 0.78)
+            - 1.5 * z["radial_cv"]
+            - 0.5 * max(0.0, z["aspect"] - 1.0)
+        ),
+    )
+
+    cx, cy = feat["center_local"]
+    _, _, bw0, bh0 = feat["bbox_local"]
+    est_r = max(4.0, 0.5 * min(bw0, bh0))
+    pol = classify_circular_polarity(gray, cx, cy, est_r)
+
+    if pol.get("label") == "via":
+        meta = {
+            "BoxAspect": round(float(raw_aspect), 4),
+            "ShapeAspect": round(float(feat["aspect"]), 4),
+            "Circularity": round(float(feat["circularity"]), 4),
+            "Extent": round(float(feat["extent"]), 4),
+            "RadialCV": round(float(feat["radial_cv"]), 4),
+            "FilterPassed": False,
+            "RejectReason": "via_polarity",
+        }
+        meta.update(pol)
+        return False, meta
+
+    if pol.get("label") == "solder":
+        meta = {
+            "BoxAspect": round(float(raw_aspect), 4),
+            "ShapeAspect": round(float(feat["aspect"]), 4),
+            "Circularity": round(float(feat["circularity"]), 4),
+            "Extent": round(float(feat["extent"]), 4),
+            "RadialCV": round(float(feat["radial_cv"]), 4),
+            "FilterPassed": True,
+            "RejectReason": "",
+        }
+        meta.update(pol)
+        return True, meta
+
+    rect_votes = 0
+    if feat["extent"] > max_extent:
+        rect_votes += 1
+    if feat["radial_cv"] > max_radial_cv:
+        rect_votes += 1
+    if feat["circularity"] < min_circularity:
+        rect_votes += 1
+    if feat["aspect"] > 1.35:
+        rect_votes += 1
+
+    keep = rect_votes < 2
+
+    meta = {
+        "BoxAspect": round(float(raw_aspect), 4),
+        "ShapeAspect": round(float(feat["aspect"]), 4),
+        "Circularity": round(float(feat["circularity"]), 4),
+        "Extent": round(float(feat["extent"]), 4),
+        "RadialCV": round(float(feat["radial_cv"]), 4),
+        "FilterPassed": bool(keep),
+        "RejectReason": "" if keep else "rectangle_like",
+    }
+    meta.update(pol)
+    return keep, meta
+
+
+def estimate_pitch(points, k_neighbors=8):
+    if len(points) < 12:
+        return None
+
+    xs = np.array([p["CenterX"] for p in points], dtype=np.float32)
+    ys = np.array([p["CenterY"] for p in points], dtype=np.float32)
+
+    dxs = []
+    dys = []
+    for i in range(len(points)):
+        dx = np.abs(xs - xs[i])
+        dy = np.abs(ys - ys[i])
+
+        mask_x = (dy < 10) & (dx > 3)
+        vals_x = dx[mask_x]
+        if vals_x.size:
+            vals_x = np.sort(vals_x)[:k_neighbors]
+            dxs.extend(vals_x.tolist())
+
+        mask_y = (dx < 10) & (dy > 3)
+        vals_y = dy[mask_y]
+        if vals_y.size:
+            vals_y = np.sort(vals_y)[:k_neighbors]
+            dys.extend(vals_y.tolist())
+
+    def robust_mode(vals):
+        if len(vals) < 10:
+            return None
+        vals = np.array(vals, dtype=np.float32)
+        vals = vals[(vals > 4) & (vals < np.percentile(vals, 85))]
+        if vals.size < 10:
+            return None
+        hist, edges = np.histogram(vals, bins=min(40, max(10, int(np.sqrt(vals.size)))))
+        idx = int(np.argmax(hist))
+        lo, hi = edges[idx], edges[idx + 1]
+        in_bin = vals[(vals >= lo) & (vals <= hi)]
+        if in_bin.size == 0:
+            return None
+        return float(np.median(in_bin))
+
+    px = robust_mode(dxs)
+    py = robust_mode(dys)
+
+    if px is None and py is None:
+        return None
+    if px is None:
+        px = py
+    if py is None:
+        py = px
+    return {"pitch_x": float(px), "pitch_y": float(py)}
+
+
+def build_grid_neighbors(points, pitch_x, pitch_y, tol_ratio=0.28):
+    tol_x = max(4.0, pitch_x * tol_ratio)
+    tol_y = max(4.0, pitch_y * tol_ratio)
+
+    for p in points:
+        p["_nbr"] = {"L": None, "R": None, "U": None, "D": None}
+        p["_support"] = 0
+
+    for i, p in enumerate(points):
+        cx, cy = p["CenterX"], p["CenterY"]
+        best = {"L": (1e18, None), "R": (1e18, None), "U": (1e18, None), "D": (1e18, None)}
+        for j, q in enumerate(points):
+            if i == j:
+                continue
+            dx = q["CenterX"] - cx
+            dy = q["CenterY"] - cy
+
+            if abs(dy) <= tol_y and abs(abs(dx) - pitch_x) <= tol_x:
+                score = abs(abs(dx) - pitch_x) + 0.5 * abs(dy)
+                if dx < 0 and score < best["L"][0]:
+                    best["L"] = (score, j)
+                elif dx > 0 and score < best["R"][0]:
+                    best["R"] = (score, j)
+
+            if abs(dx) <= tol_x and abs(abs(dy) - pitch_y) <= tol_y:
+                score = abs(abs(dy) - pitch_y) + 0.5 * abs(dx)
+                if dy < 0 and score < best["U"][0]:
+                    best["U"] = (score, j)
+                elif dy > 0 and score < best["D"][0]:
+                    best["D"] = (score, j)
+
+        for k in ["L", "R", "U", "D"]:
+            p["_nbr"][k] = best[k][1]
+        p["_support"] = sum(v is not None for v in p["_nbr"].values())
+
+    return points
+
+
+def largest_dense_component(points, min_support=1):
+    valid = [i for i, p in enumerate(points) if p.get("_support", 0) >= min_support]
+    valid_set = set(valid)
+    comps = []
+    visited = set()
+
+    for s in valid:
+        if s in visited:
+            continue
+        q = [s]
+        visited.add(s)
+        comp = []
+        while q:
+            cur = q.pop()
+            comp.append(cur)
+            for nb in points[cur]["_nbr"].values():
+                if nb is not None and nb in valid_set and nb not in visited:
+                    visited.add(nb)
+                    q.append(nb)
+        comps.append(comp)
+
+    if not comps:
+        return set()
+
+    comps.sort(key=lambda c: (len(c), sum(points[i]["_support"] for i in c)), reverse=True)
+    return set(comps[0])
+
+
+def roi_has_solder_ball(image_bgr, cx, cy, est_r, dark_center_thresh=18.0, ring_brightness_delta=6.0):
+    H, W = image_bgr.shape[:2]
+    r = max(4, int(round(est_r)))
+    x1, y1, x2, y2 = clamp_box(cx - 2 * r, cy - 2 * r, cx + 2 * r, cy + 2 * r, W, H)
+    roi = image_bgr[y1:y2, x1:x2]
+    if roi.size == 0:
+        return False, {}
+
+    gray = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
+    gray = cv2.GaussianBlur(gray, (5, 5), 0)
+
+    rx = cx - x1
+    ry = cy - y1
+
+    pol = classify_circular_polarity(gray, rx, ry, r)
+    if pol.get("label") == "via":
+        meta = {"LocalType": "via"}
+        meta.update(pol)
+        return False, meta
+    if pol.get("label") == "solder":
+        meta = {"LocalType": "solder"}
+        meta.update(pol)
+        return True, meta
+
+    yy, xx = np.indices(gray.shape)
+    dist = np.sqrt((xx - rx) ** 2 + (yy - ry) ** 2)
+
+    inner = gray[dist <= 0.85 * r]
+    ring = gray[(dist >= 1.05 * r) & (dist <= 1.65 * r)]
+    if inner.size < 10 or ring.size < 10:
+        return False, {}
+
+    inner_m = float(np.mean(inner))
+    ring_m = float(np.mean(ring))
+    contrast = ring_m - inner_m
+
+    ok = (contrast >= dark_center_thresh) or (
+        contrast >= ring_brightness_delta and inner_m < np.median(gray) - 2.0
+    )
+    meta = {
+        "LocalType": "unknown",
+        "LocalInnerMean": round(inner_m, 3),
+        "LocalRingMean": round(ring_m, 3),
+        "LocalContrast": round(contrast, 3),
+    }
+    meta.update(pol)
+    return ok, meta
+
+
+def point_exists_near(points, cx, cy, tol):
+    for p in points:
+        if abs(p["CenterX"] - cx) <= tol and abs(p["CenterY"] - cy) <= tol:
+            return True
+    return False
+
+
+def grid_add_only(points, image_bgr, pitch_x, pitch_y, tol_ratio=0.28, candidate_support=2):
+    if len(points) < 12:
+        return points, [], {"pitch_x": pitch_x, "pitch_y": pitch_y, "main_component_size": 0}
+
+    pts = [dict(p) for p in points]
+    pts = build_grid_neighbors(pts, pitch_x, pitch_y, tol_ratio=tol_ratio)
+    main_comp = largest_dense_component(pts, min_support=1)
+    if not main_comp:
+        return points, [], {"pitch_x": pitch_x, "pitch_y": pitch_y, "main_component_size": 0}
+
+    main_points = [pts[i] for i in sorted(main_comp)]
+    x_min = min(p["CenterX"] for p in main_points)
+    x_max = max(p["CenterX"] for p in main_points)
+    y_min = min(p["CenterY"] for p in main_points)
+    y_max = max(p["CenterY"] for p in main_points)
+
+    tol_x = max(4.0, pitch_x * tol_ratio)
+    tol_y = max(4.0, pitch_y * tol_ratio)
+    exist_tol = max(4.0, 0.35 * min(pitch_x, pitch_y))
+    est_r = np.median([p["Radius"] for p in main_points]) if main_points else 8.0
+
+    all_points = [dict(p) for p in points]
+    added = []
+    seen_candidate_keys = set()
+
+    def add_candidate(cx, cy, support_sources):
+        if cx < x_min - 0.6 * pitch_x or cx > x_max + 0.6 * pitch_x:
+            return
+        if cy < y_min - 0.6 * pitch_y or cy > y_max + 0.6 * pitch_y:
+            return
+        key = (int(round(cx / 3.0)), int(round(cy / 3.0)))
+        if key in seen_candidate_keys:
+            return
+        seen_candidate_keys.add(key)
+
+        if point_exists_near(all_points, cx, cy, exist_tol):
+            return
+
+        ok, meta = roi_has_solder_ball(image_bgr, int(round(cx)), int(round(cy)), est_r)
+        if not ok:
+            return
+
+        new_p = {
+            "Left": int(round(cx - est_r)),
+            "Top": int(round(cy - est_r)),
+            "Right": int(round(cx + est_r)),
+            "Bottom": int(round(cy + est_r)),
+            "CenterX": int(round(cx)),
+            "CenterY": int(round(cy)),
+            "Radius": int(round(est_r)),
+            "Width": int(round(2 * est_r)),
+            "Height": int(round(2 * est_r)),
+            "Conf": 0.0,
+            "ClassId": -1,
+            "AddedByGrid": True,
+            "CandidateSupport": int(support_sources),
+        }
+        new_p.update(meta)
+        all_points.append(new_p)
+        added.append(new_p)
+
+    for p in main_points:
+        cx, cy = p["CenterX"], p["CenterY"]
+
+        if p["_nbr"]["L"] is not None and p["_nbr"]["R"] is not None:
+            lx = pts[p["_nbr"]["L"]]["CenterX"]
+            rx = pts[p["_nbr"]["R"]]["CenterX"]
+            midx = 0.5 * (lx + rx)
+            if abs((rx - lx) - 2 * pitch_x) <= 2 * tol_x:
+                add_candidate(midx, cy, 2)
+
+        if p["_nbr"]["U"] is not None and p["_nbr"]["D"] is not None:
+            uy = pts[p["_nbr"]["U"]]["CenterY"]
+            dy = pts[p["_nbr"]["D"]]["CenterY"]
+            midy = 0.5 * (uy + dy)
+            if abs((dy - uy) - 2 * pitch_y) <= 2 * tol_y:
+                add_candidate(cx, midy, 2)
+
+        if p["_nbr"]["L"] is not None and p["_nbr"]["R"] is not None and p["_support"] >= candidate_support:
+            add_candidate(cx - pitch_x, cy, 2)
+            add_candidate(cx + pitch_x, cy, 2)
+        if p["_nbr"]["U"] is not None and p["_nbr"]["D"] is not None and p["_support"] >= candidate_support:
+            add_candidate(cx, cy - pitch_y, 2)
+            add_candidate(cx, cy + pitch_y, 2)
+
+    meta = {
+        "pitch_x": float(pitch_x),
+        "pitch_y": float(pitch_y),
+        "main_component_size": len(main_comp),
+    }
+    return all_points, added, meta
