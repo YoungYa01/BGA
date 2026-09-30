@@ -76,7 +76,7 @@ class BoardInspectionResult(TypedDict):
 def inspect_bga_void(
     input_image_path: str,
     weights_path: str,
-    conf_threshold: float = 0.50,
+    conf_threshold: Optional[float] = None,
     ng_void_threshold: float = 0.25,     # 气泡超标门槛 (默认 25%)
     device: str = "0",
     save_debug_image: bool = True,
@@ -186,7 +186,7 @@ def inspect_bga_void(
 def inspect_bga_bridge(
     input_image_path: str,
     weights_path: str,
-    conf_threshold: float = 0.50,
+    conf_threshold: Optional[float] = None,
     device: str = "0",
     save_debug_image: bool = True,
     debug_output_dir: Optional[str] = None,
@@ -309,7 +309,7 @@ def inspect_bga_bridge(
 def inspect_bga_comprehensive(
     input_image_path: str,
     weights_path: str,
-    conf_threshold: float = 0.50,
+    conf_threshold: Optional[float] = None,
     ng_void_threshold: float = 0.25,     # 气泡超标门槛 (默认 25%)
     device: str = "0",
     save_debug_image: bool = True,
@@ -456,7 +456,7 @@ def inspect_bga(
     input_image_path: str,
     weights_path: str,
     mode: str = "comprehensive",          # 可选: "comprehensive"(综合) | "void"(仅气泡) | "bridge"(仅桥连)
-    conf_threshold: float = 0.50,
+    conf_threshold: Optional[float] = None,
     ng_void_threshold: float = 0.25,
     device: str = "0",
     save_debug_image: bool = True,

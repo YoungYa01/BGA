@@ -58,7 +58,6 @@ def run_batch_bridge_test():
             res = inspect_bga_bridge(
                 input_image_path=img_path,
                 weights_path=weights_path,
-                conf_threshold=0.50,
                 device="0",
                 save_debug_image=True,
                 debug_output_dir=output_dir,

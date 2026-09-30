@@ -58,7 +58,6 @@ def run_batch_comprehensive_test():
             res = inspect_bga_comprehensive(
                 input_image_path=img_path,
                 weights_path=weights_path,
-                conf_threshold=0.50,
                 ng_void_threshold=0.25, # 25% 气泡超标阈值
                 device="0",
                 save_debug_image=True,
