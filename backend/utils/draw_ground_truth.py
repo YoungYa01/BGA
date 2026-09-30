@@ -4,12 +4,12 @@
 BGA 原始人工标注可视化绘制工具 (Ground Truth Visualizer)
 
 功能：
-1. 自动读取 data/new-img (原始图像) 和 data/new-coord (LabelMe 标注 JSON)；
+1. 自动读取 data/imgs (原始图像) 和 data/coord (LabelMe 标注 JSON)；
 2. 解析人工标注的焊球 (solder ball) 与气泡 (hole) 坐标及半径；
 3. 支持坐标自适应尺寸缩放与去重；
 4. 采用精细抗锯齿细线将人工真实标注 1:1 绘制在原图上；
 5. 在左上角添加紧凑信息栏与图例 (Legend)；
-6. 自动保存标注图至 output/void_eval_results/origin 目录。
+6. 自动保存标注图至 backend/output/void_eval_results/ground-truth 目录。
 """
 
 import argparse
@@ -29,7 +29,14 @@ if hasattr(sys.stdout, 'reconfigure'):
     except Exception:
         pass
 
-HERE = Path(__file__).resolve().parent
+HERE = Path(__file__).resolve().parent           # backend/utils
+BACKEND_DIR = HERE.parent                        # backend
+PROJECT_ROOT = BACKEND_DIR.parent                # 项目根目录 (即 ./)
+
+# 默认路径定义 (数据文件夹 data 位于项目根目录，输出目录位于 backend/output)
+DEFAULT_IMG_DIR = PROJECT_ROOT / "data" / "imgs" if (PROJECT_ROOT / "data" / "imgs").exists() else (PROJECT_ROOT / "data" / "new-img")
+DEFAULT_COORD_DIR = PROJECT_ROOT / "data" / "coord" if (PROJECT_ROOT / "data" / "coord").exists() else (PROJECT_ROOT / "data" / "new-coord")
+DEFAULT_OUTPUT_DIR = BACKEND_DIR / "output" / "void_eval_results" / "ground-truth"
 
 # 支持的常见图像扩展名
 IMAGE_EXTS = [".jpg", ".jpeg", ".png", ".bmp", ".tif", ".tiff", ".webp"]
@@ -143,9 +150,9 @@ def draw_ground_truth_image(
 
 def main():
     parser = argparse.ArgumentParser(description="将人工标注的 BGA 焊球与气泡绘制在原图中")
-    parser.add_argument("--img-dir", default=str(HERE / "data" / "new-img"), help="图片目录路径 (默认: data/new-img)")
-    parser.add_argument("--coord-dir", default=str(HERE / "data" / "new-coord"), help="标注 JSON 目录路径 (默认: data/new-coord)")
-    parser.add_argument("--output", default=str(HERE / "output" / "void_eval_results" / "ground-truth"), help="输出目录 (默认: output/void_eval_results/ground-truth)")
+    parser.add_argument("--img-dir", default=str(DEFAULT_IMG_DIR), help="图片目录路径 (默认: data/imgs)")
+    parser.add_argument("--coord-dir", default=str(DEFAULT_COORD_DIR), help="标注 JSON 目录路径 (默认: data/coord)")
+    parser.add_argument("--output", default=str(DEFAULT_OUTPUT_DIR), help="输出目录 (默认: backend/output/void_eval_results/ground-truth)")
     parser.add_argument("--solder-label", default="solder ball", help="焊球标签名称 (默认: solder ball)")
     parser.add_argument("--hole-label", default="hole", help="孔洞标签名称 (默认: hole)")
     parser.add_argument("--line-thickness", type=int, default=1, help="圆圈线条粗细 (默认: 1)")

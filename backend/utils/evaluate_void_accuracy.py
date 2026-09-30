@@ -4,12 +4,12 @@
 BGA 焊点内部孔洞/气泡精度评估工具 (BGA_Void_Detection 本地精简适配版)
 
 功能：
-1. 默认读取 data/new-img (图像) 和 data/new-coord (LabelMe 标注 JSON)；
+1. 默认读取 data/imgs (图像) 和 data/coord (LabelMe 标注 JSON)；
 2. 直接调用本地 bga_void_seg.py 进行焊球与气泡高召回推理；
 3. 输出实例级 TP / FP / FN，Precision / Recall / F1 / ACC；
 4. 输出像素级 Mask IoU / Dice；
 5. 输出气泡率误差 (void_rate MAE) 与 NG 判定准确率；
-6. 生成可视化图片 (TP绿色、FP红色、FN橙色) 及 CSV / JSON 报表。
+6. 生成可视化图片 (TP绿色、FP红色、FN橙色) 及 CSV / JSON 报表保存在 backend/output/void_eval_results 目录。
 """
 
 from __future__ import annotations
@@ -34,12 +34,22 @@ if hasattr(sys.stdout, 'reconfigure'):
     except Exception:
         pass
 
-# 确保能直接导入本地模块
-HERE = Path(__file__).resolve().parent
-if str(HERE) not in sys.path:
-    sys.path.insert(0, str(HERE))
+# 确保能直接导入本地模块与上级 backend 模块
+HERE = Path(__file__).resolve().parent           # backend/utils
+BACKEND_DIR = HERE.parent                        # backend
+PROJECT_ROOT = BACKEND_DIR.parent                # 项目根目录 (即 ./)
+
+for p in (str(BACKEND_DIR), str(HERE), str(PROJECT_ROOT)):
+    if p not in sys.path:
+        sys.path.insert(0, p)
 
 import bga_void_seg
+
+# 默认路径定义 (数据文件夹 data 位于项目根目录，模型权重与输出目录位于 backend)
+DEFAULT_IMG_DIR = PROJECT_ROOT / "data" / "imgs" if (PROJECT_ROOT / "data" / "imgs").exists() else (PROJECT_ROOT / "data" / "new-img")
+DEFAULT_COORD_DIR = PROJECT_ROOT / "data" / "coord" if (PROJECT_ROOT / "data" / "coord").exists() else (PROJECT_ROOT / "data" / "new-coord")
+DEFAULT_WEIGHTS = BACKEND_DIR / "best.pt" if (BACKEND_DIR / "best.pt").exists() else (PROJECT_ROOT / "best.pt")
+DEFAULT_OUTPUT_DIR = BACKEND_DIR / "output" / "void_eval_results"
 
 IMAGE_EXTS = [".jpg", ".jpeg", ".png", ".bmp", ".tif", ".tiff", ".webp"]
 
@@ -509,10 +519,10 @@ def discover_image_coord_pairs(
 
 def main():
     parser = argparse.ArgumentParser(description="BGA 焊点内部孔洞/气泡高召回精度评估工具")
-    parser.add_argument("--img-dir", default=str(HERE / "data" / "new-img"), help="图片目录路径 (默认: data/new-img)")
-    parser.add_argument("--coord-dir", default=str(HERE / "data" / "new-coord"), help="标注 JSON 目录路径 (默认: data/new-coord)")
-    parser.add_argument("--weights", default=str(HERE / "best.pt"), help="模型权重文件路径 (默认: best.pt)")
-    parser.add_argument("--output", default=str(HERE / "output" / "void_eval_results"), help="评估结果输出目录")
+    parser.add_argument("--img-dir", default=str(DEFAULT_IMG_DIR), help="图片目录路径 (默认: data/imgs)")
+    parser.add_argument("--coord-dir", default=str(DEFAULT_COORD_DIR), help="标注 JSON 目录路径 (默认: data/coord)")
+    parser.add_argument("--weights", default=str(DEFAULT_WEIGHTS), help="模型权重文件路径 (默认: backend/best.pt)")
+    parser.add_argument("--output", default=str(DEFAULT_OUTPUT_DIR), help="评估结果输出目录 (默认: backend/output/void_eval_results)")
     parser.add_argument("--device", default="cpu", help="推理设备 (cpu, 0 等)")
     parser.add_argument("--conf", type=float, default=0.25, help="焊点置信度阈值 (默认: 0.25)")
     parser.add_argument("--hole-label", default="hole", help="孔洞标签名称 (默认: hole)")
